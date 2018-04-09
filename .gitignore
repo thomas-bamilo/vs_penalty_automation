@@ -1,3 +1,4 @@
-file.csv
+*.csv
 logfile.txt
 *.exe
+config.yaml

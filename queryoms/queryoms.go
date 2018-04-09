@@ -9,7 +9,7 @@ import (
 	"github.com/joho/sqltocsv"
 )
 
-// QueryOms queries oms and write result to csv file
+// QueryOms queries oms and write result to csv file in the folder specified in the function's argument
 func QueryOms(csvPath string) {
 
 	db, err := sql.Open("mysql",
