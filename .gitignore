@@ -2,3 +2,4 @@
 logfile.txt
 *.exe
 config.yaml
+archive*
