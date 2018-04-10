@@ -4,8 +4,9 @@ import (
 	"database/sql"
 	"log"
 
-	// I don't know what I am doing
+	// MySQL driver
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/thomas-bamilo/vs_penalty_automation/dbconf"
 )
 
 // SellerPenalty is a struct representing the table of penalty amounts per sales order item
@@ -23,9 +24,14 @@ type SellerPenalty struct {
 // CreateSellerPenalty queries oms and write result to SellerPenalty struct
 func CreateSellerPenalty() []SellerPenalty {
 
+	// fetch database configuration
+	var dbConf dbconf.DbConf
+	dbConf.ReadYamlDbConf()
+	// create connection string
+	connStr := dbConf.OmsUser + ":" + dbConf.OmsPw + "@tcp(" + dbConf.OmsHost + ")/" + dbConf.OmsDb
+
 	// connect to database
-	db, err := sql.Open("mysql",
-		"thomas:TH#)dec@)!&@tcp(178.22.70.43:3306)/oms_live_ir")
+	db, err := sql.Open("mysql", connStr)
 	if err != nil {
 		log.Fatal(err)
 	}

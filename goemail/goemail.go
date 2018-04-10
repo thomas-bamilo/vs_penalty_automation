@@ -11,7 +11,7 @@ import (
 // To understand how config.yaml should be built, please look for yaml file format on Google and also look at goemail/emailconf/emailconf.go
 func GoEmail() {
 
-	var emailconf emailconf.Conf
+	var emailconf emailconf.EmailConf
 
 	emailconf.ReadYamlEmailConf()
 

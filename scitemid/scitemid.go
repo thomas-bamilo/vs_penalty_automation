@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 
+	dbconf "github.com/thomas-bamilo/vs_penalty_automation/dbconf"
 	// driver for MySQL
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -17,9 +18,14 @@ type ScItemID struct {
 // CreateScItemID queries seller center and write result to ScItemID struct
 func CreateScItemID(omsItemNumberFilter string) []ScItemID {
 
+	// fetch database configuration
+	var dbConf dbconf.DbConf
+	dbConf.ReadYamlDbConf()
+	// create connection string
+	connStr := dbConf.ScUser + ":" + dbConf.ScPw + "@tcp(" + dbConf.ScHost + ")/" + dbConf.ScDb
+
 	// connect to database
-	db, err := sql.Open("mysql",
-		"bamilo2_bi:==47.scale.ACTUALLY.start.62==@tcp(rr-4xon5d7xscl6ucvq0yo.mysql.germany.rds.aliyuncs.com)/sc_live_ir")
+	db, err := sql.Open("mysql", connStr)
 	if err != nil {
 		log.Fatal(err)
 	}
