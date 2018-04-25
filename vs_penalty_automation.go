@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/thomas-bamilo/vs_penalty_automation/goemail"
+	"github.com/thomas-bamilo/goemail"
 	joinscomstocsv "github.com/thomas-bamilo/vs_penalty_automation/joinscomstocsv"
 	scitemid "github.com/thomas-bamilo/vs_penalty_automation/scitemid"
 	sellerpenalty "github.com/thomas-bamilo/vs_penalty_automation/sellerpenalty"

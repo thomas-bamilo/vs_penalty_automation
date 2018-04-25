@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 
-	dbconf "github.com/thomas-bamilo/vs_penalty_automation/dbconf"
+	dbconf "github.com/thomas-bamilo/dbconf"
 	// driver for MySQL
 	_ "github.com/go-sql-driver/mysql"
 )

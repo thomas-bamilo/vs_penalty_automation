@@ -6,7 +6,7 @@ import (
 
 	// MySQL driver
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/thomas-bamilo/vs_penalty_automation/dbconf"
+	"github.com/thomas-bamilo/dbconf"
 )
 
 // SellerPenalty is a struct representing the table of penalty amounts per sales order item
