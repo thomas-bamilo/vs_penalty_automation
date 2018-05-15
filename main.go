@@ -1,30 +1,20 @@
 package main
 
 import (
-	"log"
-	"os"
 	"strconv"
 
-	"github.com/thomas-bamilo/goemail"
-	joinscomstocsv "github.com/thomas-bamilo/vs_penalty_automation/joinscomstocsv"
-	scitemid "github.com/thomas-bamilo/vs_penalty_automation/scitemid"
-	sellerpenalty "github.com/thomas-bamilo/vs_penalty_automation/sellerpenalty"
+	"github.com/thomas-bamilo/email/goemail"
+	joinscomstocsv "github.com/thomas-bamilo/vspenaltyautomation/joinscomstocsv"
+	scitemid "github.com/thomas-bamilo/vspenaltyautomation/scitemid"
+	sellerpenalty "github.com/thomas-bamilo/vspenaltyautomation/sellerpenalty"
 )
 
 func main() {
 
-	// used for logging
-	f, err := os.OpenFile("logfile.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
-	if err != nil {
-		log.Fatalf("error opening file: %v", err)
-	}
-	defer f.Close()
-	log.SetOutput(f)
-
 	// get seller penalty data from oms
 	sellerPenalty := sellerpenalty.CreateSellerPenalty()
 
-	// get omsID to only fetch coreesponding ID from Seller Center
+	// get omsID to only fetch corresponding ID from Seller Center
 	var omsIDStr string
 	for i := 0; i < len(sellerPenalty)-1; i++ {
 		omsIDStr += strconv.Itoa(sellerPenalty[i].OmsItemNumber) + ","

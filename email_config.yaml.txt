@@ -1,7 +1,0 @@
-title: Sellers penalties
-body: Please find enclosed the sellers penalties
-attachPath: seller_penalty.csv
-recipient: mohammad.goudarzi@bamilo.com,thomas.beaudouin@bamilo.com
-senderEmail: bamilo.automation@aol.com
-senderName: bamilo.automation
-senderPw: YOUWISH!

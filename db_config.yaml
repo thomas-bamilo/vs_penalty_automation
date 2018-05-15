@@ -1,9 +1,26 @@
-dbChoice: NA
+dbChoice: bi
+
 scUser: bamilo2_bi
 scPw: ==47.scale.ACTUALLY.start.62==
 scHost: rr-4xon5d7xscl6ucvq0yo.mysql.germany.rds.aliyuncs.com
 scDb: sc_live_ir
+
 omsUser: thomas
 omsPw: TH#)dec@)!&
 omsHost: 178.22.70.43:3306
 omsDb: oms_live_ir
+
+bobUser: thomas
+bobPw: TH#)dec@)!&
+bobHost: rr-4xon5d7xscl6ucvq0yo.mysql.germany.rds.aliyuncs.com
+bobDb: bob_live_ir
+
+biUser: ThomasBeaudouin
+biPw: Vu5iI1Z9AYno
+biHost: 192.168.100.20
+biDb: BI_REPLICA
+
+baaUser: baa_application
+baaPw: JjxFDgWjgsTVLznD
+baaHost: BML-251
+baaDb: BAA

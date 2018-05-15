@@ -1,12 +1,12 @@
 package joinscomstocsv
 
 import (
-	"database/sql"
 	"log"
 	"time"
 
-	scitemid "github.com/thomas-bamilo/vs_penalty_automation/scitemid"
-	sellerpenalty "github.com/thomas-bamilo/vs_penalty_automation/sellerpenalty"
+	"github.com/thomas-bamilo/sql/connectdb"
+	scitemid "github.com/thomas-bamilo/vspenaltyautomation/scitemid"
+	sellerpenalty "github.com/thomas-bamilo/vspenaltyautomation/sellerpenalty"
 
 	"github.com/joho/sqltocsv"
 	// driver for sqlite3
@@ -15,13 +15,8 @@ import (
 
 // JoinScOmsToCsv joins seller_penalty and sc_item_id tables on oms_item_number and write result to csv file in the same folder as the application
 func JoinScOmsToCsv(sellerPenalty []sellerpenalty.SellerPenalty, scItemID []scitemid.ScItemID) {
-
-	// create database in shared memory (in memory but different queries can access it because it is cached and shared)
-	database, err := sql.Open("sqlite3", ":memory:")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer database.Close()
+	log.Println("Connecting to SQLite...")
+	database := connectdb.ConnectToSQLite()
 
 	// create seller_penalty table
 	createSellerPenaltyTableStr := `CREATE TABLE IF NOT EXISTS seller_penalty (
@@ -112,5 +107,6 @@ func JoinScOmsToCsv(sellerPenalty []sellerpenalty.SellerPenalty, scItemID []scit
 	if err != nil {
 		log.Fatal(err)
 	}
+	log.Println("File written to CSV!")
 
 }

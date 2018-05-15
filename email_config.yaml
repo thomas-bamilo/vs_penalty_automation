@@ -1,7 +1,9 @@
 title: Sellers penalties
 body: Please find enclosed the sellers penalties
 attachPath: seller_penalty.csv
-recipient: mohammad.goudarzi@bamilo.com,shirin.moradi@bamilo.com,thomas.beaudouin@bamilo.com
-senderEmail: bamilo.automation@aol.com
+recipient: thomas.beaudouin@bamilo.com
+senderEmail: bamilo.automation@zoho.com
 senderName: bamilo.automation
 senderPw: golangisgreat
+smtpAddr: smtp.zoho.com
+smtpPort: 587

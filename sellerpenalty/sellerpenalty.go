@@ -6,7 +6,7 @@ import (
 
 	// MySQL driver
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/thomas-bamilo/dbconf"
+	"github.com/thomas-bamilo/sql/dbconf"
 )
 
 // SellerPenalty is a struct representing the table of penalty amounts per sales order item
@@ -47,7 +47,7 @@ func CreateSellerPenalty() []SellerPenalty {
 	}
 
 	// store the query in a string
-	query := `  SELECT 
+	query := `SELECT 
 	COALESCE(is1.name_en,'NA') supplier_name
 	,COALESCE(iso.order_nr,0)
 	,COALESCE(isoi.bob_id_sales_order_item,0) bob_item_number
@@ -56,7 +56,7 @@ func CreateSellerPenalty() []SellerPenalty {
 	  ,COALESCE(or1.name,'NA') cancel_reason
 	,CONCAT(CASE WHEN MONTH(CURRENT_DATE()) = 1 THEN YEAR(CURRENT_DATE())-1 ELSE YEAR(CURRENT_DATE()) END
 			  ,CASE WHEN MONTH(CURRENT_DATE()) = 1 THEN 12 ELSE MONTH(CURRENT_DATE())-1 END) 'year_month'
-	,220000 amount
+	,250000 amount
 	  
 	  FROM ims_sales_order_item isoi
 	  
