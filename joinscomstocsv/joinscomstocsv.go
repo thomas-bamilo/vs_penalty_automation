@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/thomas-bamilo/sql/connectdb"
-	scitemid "github.com/thomas-bamilo/vspenaltyautomation/scitemid"
-	sellerpenalty "github.com/thomas-bamilo/vspenaltyautomation/sellerpenalty"
+	scitemid "github.com/thomas-bamilo/vs/sellermistakepenalty/scitemid"
+	sellerpenalty "github.com/thomas-bamilo/vs/sellermistakepenalty/sellerpenalty"
 
 	"github.com/joho/sqltocsv"
 	// driver for sqlite3
@@ -103,7 +103,7 @@ func JoinScOmsToCsv(sellerPenalty []sellerpenalty.SellerPenalty, scItemID []scit
 		log.Fatal(err)
 	}
 
-	err = sqltocsv.WriteFile("seller_penalty.csv", rows)
+	err = sqltocsv.WriteFile("seller_mistake_penalty.csv", rows)
 	if err != nil {
 		log.Fatal(err)
 	}

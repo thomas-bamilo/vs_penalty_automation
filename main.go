@@ -4,9 +4,9 @@ import (
 	"strconv"
 
 	"github.com/thomas-bamilo/email/goemail"
-	joinscomstocsv "github.com/thomas-bamilo/vspenaltyautomation/joinscomstocsv"
-	scitemid "github.com/thomas-bamilo/vspenaltyautomation/scitemid"
-	sellerpenalty "github.com/thomas-bamilo/vspenaltyautomation/sellerpenalty"
+	joinscomstocsv "github.com/thomas-bamilo/vs/sellermistakepenalty/joinscomstocsv"
+	scitemid "github.com/thomas-bamilo/vs/sellermistakepenalty/scitemid"
+	sellerpenalty "github.com/thomas-bamilo/vs/sellermistakepenalty/sellerpenalty"
 )
 
 func main() {
